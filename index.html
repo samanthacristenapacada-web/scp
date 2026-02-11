@@ -7,7 +7,6 @@
 
 <style>
 *{margin:0; padding:0; box-sizing:border-box;}
-
 body{
     height:100vh;
     overflow:hidden;
@@ -21,104 +20,29 @@ body{
     color:white;
     position:relative;
 }
-
 @keyframes gradientMove{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
-
 h1{margin-top:70px; font-size:3em; text-shadow:0 0 20px #fff,0 0 40px #ff66b2;}
-
 .buttons{margin-top:60px; position:relative; width:400px; height:250px;}
-
-#yesBtn{
-    padding:22px 50px;
-    font-size:22px;
-    border:none;
-    border-radius:40px;
-    cursor:pointer;
-    background:linear-gradient(45deg,#ff4da6,#ff99cc);
-    color:white;
-    box-shadow:0 0 25px #ff66b2;
-}
-
-#noBtn{
-    padding:12px 25px;
-    font-size:16px;
-    border:none;
-    border-radius:30px;
-    background:white;
-    color:#ff4da6;
-    position:absolute;
-    cursor:pointer;
-}
-
-.emoji-pop{
-    position:fixed;
-    font-size:120px;
-    pointer-events:none;
-    animation:popAnim 0.3s ease;
-}
-
-@keyframes popAnim{
-    from{transform:scale(0);opacity:0;}
-    to{transform:scale(1);opacity:1;}
-}
-
+#yesBtn{padding:22px 50px; font-size:22px; border:none; border-radius:40px; cursor:pointer; background:linear-gradient(45deg,#ff4da6,#ff99cc); color:white; box-shadow:0 0 25px #ff66b2;}
+#noBtn{padding:12px 25px; font-size:16px; border:none; border-radius:30px; background:white; color:#ff4da6; position:absolute; cursor:pointer;}
+.emoji-pop{position:fixed; font-size:120px; pointer-events:none; animation:popAnim 0.3s ease;}
+@keyframes popAnim{from{transform:scale(0);opacity:0;} to{transform:scale(1);opacity:1;}}
 .heart{position:absolute; animation: floatUp linear infinite;}
-
-@keyframes floatUp{
-    0%{transform:translateY(100vh); opacity:0;}
-    50%{opacity:1;}
-    100%{transform:translateY(-10vh); opacity:0;}
-}
-
-/* Bouquet Scene */
-#bouquetScene{
-    position:fixed;
-    inset:0;
-    background: radial-gradient(circle,#ff4da6,#b30059);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    opacity:0;
-    pointer-events:none;
-    transition:opacity 1.5s ease;
-    text-align:center;
-    padding:20px;
-}
-
+@keyframes floatUp{0%{transform:translateY(100vh); opacity:0;} 50%{opacity:1;} 100%{transform:translateY(-10vh); opacity:0;}}
+#bouquetScene{position:fixed; inset:0; background: radial-gradient(circle,#ff4da6,#b30059); display:flex; flex-direction:column; justify-content:center; align-items:center; opacity:0; pointer-events:none; transition:opacity 1.5s ease; text-align:center; padding:20px;}
 #bouquetScene.active{opacity:1; pointer-events:all;}
-
 .bouquet{font-size:120px; animation: glow 2s infinite alternate;}
-
-@keyframes glow{
-    from{ text-shadow:0 0 20px #fff,0 0 40px #ff99cc;}
-    to{ text-shadow:0 0 60px #fff,0 0 100px #ff1a75;}
-}
-
+@keyframes glow{from{ text-shadow:0 0 20px #fff,0 0 40px #ff99cc;} to{ text-shadow:0 0 60px #fff,0 0 100px #ff1a75;}}
 .romantic-text{font-size:1.6em; margin:20px 0; line-height:1.4em;}
-
-textarea{
-    width:300px; height:80px; border-radius:15px; border:none;
-    padding:10px; resize:none; font-family:cursive;
-}
-
-.submit-btn{
-    margin-top:10px; padding:8px 20px; border:none; border-radius:20px;
-    background:white; color:#ff4da6; cursor:pointer; font-weight:bold;
-}
-
+textarea{width:300px; height:80px; border-radius:15px; border:none; padding:10px; resize:none; font-family:cursive;}
+.submit-btn{margin-top:10px; padding:8px 20px; border:none; border-radius:20px; background:white; color:#ff4da6; cursor:pointer; font-weight:bold;}
 .love-message{margin-top:15px; font-size:1.2em; max-width:300px; word-wrap:break-word;}
-
 .sparkle{position:absolute; font-size:18px; animation:sparkleMove 4s linear infinite;}
-@keyframes sparkleMove{
-    0%{transform:translateY(100vh);opacity:0;}
-    50%{opacity:1;}
-    100%{transform:translateY(-10vh);opacity:0;}
-}
+@keyframes sparkleMove{0%{transform:translateY(100vh);opacity:0;} 50%{opacity:1;} 100%{transform:translateY(-10vh);opacity:0;}}
 </style>
 </head>
 <body>
@@ -133,11 +57,11 @@ textarea{
 <div id="bouquetScene">
     <div class="bouquet">💐🌹💖</div>
     <div class="romantic-text">
-        My love, every moment with you makes my heart bloom brighter than a thousand roses. You are my sunshine, my happiness, and my sweetest dream come true. Being with you fills my world with endless love and joy, and I can’t imagine a day without you by my side 💖🌹💞.
+        AWWWWWWWWWWWWWWWWW I LOVE YOUUUUUUUUUUUUUUU 💖🌹💞.
     </div>
 
     <textarea id="loveInput" placeholder="Leave a sweet message... 💌"></textarea><br>
-    <button class="submit-btn" id="sendMessageBtn">Send 💖</button>
+    <button class="submit-btn" id="sendBtn">Send 💖</button>
     <div class="love-message" id="displayMessage"></div>
 </div>
 
@@ -145,14 +69,13 @@ textarea{
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
-emailjs.init("HXN-YZH_B85U8Mcj_"); // NEW Public Key
+// Initialize EmailJS with your PUBLIC key
+emailjs.init("HXN-YZH_B85U8Mcj_"); // ✅ Your public key
 
-const noBtn=document.getElementById("noBtn");
-const yesBtn=document.getElementById("yesBtn");
-const bouquetScene=document.getElementById("bouquetScene");
-const sendMessageBtn = document.getElementById("sendMessageBtn");
-const loveInput = document.getElementById("loveInput");
-const displayMessage = document.getElementById("displayMessage");
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const bouquetScene = document.getElementById("bouquetScene");
+const sendBtn = document.getElementById("sendBtn");
 
 /* Move NO button */
 function moveNo(){
@@ -174,22 +97,13 @@ function showEmojiFar(){
     setTimeout(()=>emoji.remove(),3000);
 }
 
-noBtn.addEventListener("mouseenter",function(e){
-    moveNo();
-    showEmojiFar();
-});
-noBtn.addEventListener("touchstart",function(e){
-    e.preventDefault();
-    moveNo();
-    showEmojiFar();
-});
+noBtn.addEventListener("mouseenter",function(e){moveNo(); showEmojiFar();});
 moveNo();
 
-/* YES pressed: bouquet + glowing heart rain + sparkles */
+/* YES pressed: bouquet + sparkles */
 yesBtn.addEventListener("click", function() {
     document.body.style.opacity = "0";
     document.body.style.transition = "opacity 1s";
-
     setTimeout(() => {
         bouquetScene.classList.add("active");
         document.body.style.opacity = "1";
@@ -198,26 +112,30 @@ yesBtn.addEventListener("click", function() {
     }, 1000);
 });
 
-/* Send message to EmailJS */
-sendMessageBtn.addEventListener("click", function(){
-    const message = loveInput.value.trim();
-    if(!message){
-        displayMessage.textContent = "❌ Please enter a message!";
+/* 💌 SEND MESSAGE TO EMAILJS */
+sendBtn.addEventListener("click", function(){
+    const input = document.getElementById("loveInput").value;
+    const display = document.getElementById("displayMessage");
+
+    if(input.trim() === ""){
+        display.innerHTML = "❌ Please type a message!";
         return;
     }
 
-    displayMessage.textContent = "📨 Sending...";
+    sendBtn.disabled = true;
+    display.innerHTML = "📨 Sending...";
 
-    emailjs.send("service_9n7ar4q", "template_nqol9i5", {
-        mahiwagangmensahe: message
-    })
+    const templateParams = { Pacada: input }; // ✅ updated template variable
+
+    emailjs.send("service_9n7ar4q", "template_nqol9i5", templateParams)
     .then(function(response){
-        console.log("SUCCESS!", response.status, response.text);
-        displayMessage.textContent = "💌 Message sent successfully!";
-        loveInput.value = "";
+        display.innerHTML = "💌 Message sent! 💖";
+        sendBtn.disabled = false;
+        document.getElementById("loveInput").value = "";
     }, function(error){
-        console.log("FAILED...", error);
-        displayMessage.textContent = "❌ Failed to send. Try again!";
+        display.innerHTML = "❌ Failed to send!";
+        console.error("EmailJS Error:", error);
+        sendBtn.disabled = false;
     });
 });
 
@@ -263,10 +181,7 @@ function startHeartRainStaggered(){
             document.body.appendChild(heart);
 
             const duration = 5000;
-            heart.animate([
-                { transform: `translateY(0px)` },
-                { transform: `translateY(100vh)` }
-            ], { duration: duration, iterations:1, easing: "ease-out" });
+            heart.animate([{ transform: `translateY(0px)` }, { transform: `translateY(100vh)` }], { duration: duration, iterations:1, easing: "ease-out" });
 
             setTimeout(()=>heart.remove(), duration);
         }, i*200);
